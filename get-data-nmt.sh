@@ -148,227 +148,227 @@ fi
 # Download monolingual data
 #
 
-cd $MONO_PATH
+# cd $MONO_PATH
 
-if [ "$SRC" == "de" -o "$TGT" == "de" ]; then
-  echo "Downloading German monolingual data ..."
-  mkdir -p $MONO_PATH/de
-  #cd $MONO_PATH/de
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.de.shuffled.gz
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.de.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.de.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.de.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.de.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.de.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2013.de.shuffled.gz
-  # wget -c http://www.statmt.org/wmt15/training-monolingual-news-crawl-v2/news.2014.de.shuffled.v2.gz
-  # wget -c http://data.statmt.org/wmt16/translation-task/news.2015.de.shuffled.gz
-  # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.de.shuffled.gz
-  # wget -c http://data.statmt.org/wmt18/translation-task/news.2017.de.shuffled.deduped.gz
-fi
+# if [ "$SRC" == "de" -o "$TGT" == "de" ]; then
+#   echo "Downloading German monolingual data ..."
+#   mkdir -p $MONO_PATH/de
+#   #cd $MONO_PATH/de
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.de.shuffled.gz
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.de.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.de.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.de.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.de.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.de.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2013.de.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt15/training-monolingual-news-crawl-v2/news.2014.de.shuffled.v2.gz
+#   # wget -c http://data.statmt.org/wmt16/translation-task/news.2015.de.shuffled.gz
+#   # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.de.shuffled.gz
+#   # wget -c http://data.statmt.org/wmt18/translation-task/news.2017.de.shuffled.deduped.gz
+# fi
 
-if [ "$SRC" == "en" -o "$TGT" == "en" ]; then
-  echo "Downloading English monolingual data ..."
-  mkdir -p $MONO_PATH/en
-  #cd $MONO_PATH/en
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.en.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.en.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.en.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.en.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.en.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2013.en.shuffled.gz
-  # wget -c http://www.statmt.org/wmt15/training-monolingual-news-crawl-v2/news.2014.en.shuffled.v2.gz
-  # wget -c http://data.statmt.org/wmt16/translation-task/news.2015.en.shuffled.gz
-  # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.en.shuffled.gz
-  # wget -c http://data.statmt.org/wmt18/translation-task/news.2017.en.shuffled.deduped.gz
-fi
+# if [ "$SRC" == "en" -o "$TGT" == "en" ]; then
+#   echo "Downloading English monolingual data ..."
+#   mkdir -p $MONO_PATH/en
+#   #cd $MONO_PATH/en
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.en.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.en.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.en.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.en.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.en.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2013.en.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt15/training-monolingual-news-crawl-v2/news.2014.en.shuffled.v2.gz
+#   # wget -c http://data.statmt.org/wmt16/translation-task/news.2015.en.shuffled.gz
+#   # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.en.shuffled.gz
+#   # wget -c http://data.statmt.org/wmt18/translation-task/news.2017.en.shuffled.deduped.gz
+# fi
 
-if [ "$SRC" == "fr" -o "$TGT" == "fr" ]; then
-  echo "Downloading French monolingual data ..."
-  mkdir -p $MONO_PATH/fr
-  cd $MONO_PATH/fr
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.fr.shuffled.gz
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.fr.shuffled.gz
-  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.fr.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.fr.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.fr.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.fr.shuffled.gz
-  # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2013.fr.shuffled.gz
-  # wget -c http://www.statmt.org/wmt15/training-monolingual-news-crawl-v2/news.2014.fr.shuffled.v2.gz
-  # wget -c http://data.statmt.org/wmt17/translation-task/news.2015.fr.shuffled.gz
-  # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.fr.shuffled.gz
-  # wget -c http://data.statmt.org/wmt17/translation-task/news.2017.fr.shuffled.gz
-fi
+# if [ "$SRC" == "fr" -o "$TGT" == "fr" ]; then
+#   echo "Downloading French monolingual data ..."
+#   mkdir -p $MONO_PATH/fr
+#   cd $MONO_PATH/fr
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.fr.shuffled.gz
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.fr.shuffled.gz
+#   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.fr.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.fr.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.fr.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.fr.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2013.fr.shuffled.gz
+#   # wget -c http://www.statmt.org/wmt15/training-monolingual-news-crawl-v2/news.2014.fr.shuffled.v2.gz
+#   # wget -c http://data.statmt.org/wmt17/translation-task/news.2015.fr.shuffled.gz
+#   # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.fr.shuffled.gz
+#   # wget -c http://data.statmt.org/wmt17/translation-task/news.2017.fr.shuffled.gz
+# fi
 
-if [ "$SRC" == "ro" -o "$TGT" == "ro" ]; then
-  echo "Downloading Romanian monolingual data ..."
-  mkdir -p $MONO_PATH/ro
-  cd $MONO_PATH/ro
-  wget -c http://data.statmt.org/wmt16/translation-task/news.2015.ro.shuffled.gz
-fi
+# if [ "$SRC" == "ro" -o "$TGT" == "ro" ]; then
+#   echo "Downloading Romanian monolingual data ..."
+#   mkdir -p $MONO_PATH/ro
+#   cd $MONO_PATH/ro
+#   wget -c http://data.statmt.org/wmt16/translation-task/news.2015.ro.shuffled.gz
+# fi
 
-cd $MONO_PATH
+# cd $MONO_PATH
 
-# decompress monolingual data
-#for FILENAME in $SRC/news*gz $TGT/news*gz; do
- # OUTPUT="${FILENAME::-3}"
- # if [ ! -f "$OUTPUT" ]; then
- #   echo "Decompressing $FILENAME..."
- #   gunzip -k $FILENAME
- # else
-#    echo "$OUTPUT already decompressed."
- # fi
-#done
+# # decompress monolingual data
+# #for FILENAME in $SRC/news*gz $TGT/news*gz; do
+#  # OUTPUT="${FILENAME::-3}"
+#  # if [ ! -f "$OUTPUT" ]; then
+#  #   echo "Decompressing $FILENAME..."
+#  #   gunzip -k $FILENAME
+#  # else
+# #    echo "$OUTPUT already decompressed."
+#  # fi
+# #done
 
-# concatenate monolingual data files
-#if ! [[ -f "$SRC_RAW" ]]; then
- # echo "Concatenating $SRC monolingual data..."
- # cat $(ls $SRC/news*$SRC* | grep -v gz) | head -n $N_MONO > $SRC_RAW
-#fi
-#if ! [[ -f "$TGT_RAW" ]]; then
-#  echo "Concatenating $TGT monolingual data..."
-#  cat $(ls $TGT/news*$TGT* | grep -v gz) | head -n $N_MONO > $TGT_RAW
-#fi
-#echo "$SRC monolingual data concatenated in: $SRC_RAW"
-#echo "$TGT monolingual data concatenated in: $TGT_RAW"
+# # concatenate monolingual data files
+# #if ! [[ -f "$SRC_RAW" ]]; then
+#  # echo "Concatenating $SRC monolingual data..."
+#  # cat $(ls $SRC/news*$SRC* | grep -v gz) | head -n $N_MONO > $SRC_RAW
+# #fi
+# #if ! [[ -f "$TGT_RAW" ]]; then
+# #  echo "Concatenating $TGT monolingual data..."
+# #  cat $(ls $TGT/news*$TGT* | grep -v gz) | head -n $N_MONO > $TGT_RAW
+# #fi
+# #echo "$SRC monolingual data concatenated in: $SRC_RAW"
+# #echo "$TGT monolingual data concatenated in: $TGT_RAW"
 
-# # check number of lines
-# if ! [[ "$(wc -l < $SRC_RAW)" -eq "$N_MONO" ]]; then echo "ERROR: Number of lines does not match! Be sure you have $N_MONO sentences in your $SRC monolingual data."; exit; fi
-# if ! [[ "$(wc -l < $TGT_RAW)" -eq "$N_MONO" ]]; then echo "ERROR: Number of lines does not match! Be sure you have $N_MONO sentences in your $TGT monolingual data."; exit; fi
+# # # check number of lines
+# # if ! [[ "$(wc -l < $SRC_RAW)" -eq "$N_MONO" ]]; then echo "ERROR: Number of lines does not match! Be sure you have $N_MONO sentences in your $SRC monolingual data."; exit; fi
+# # if ! [[ "$(wc -l < $TGT_RAW)" -eq "$N_MONO" ]]; then echo "ERROR: Number of lines does not match! Be sure you have $N_MONO sentences in your $TGT monolingual data."; exit; fi
 
-# preprocessing commands - special case for Romanian
-if [ "$SRC" == "ro" ]; then
-  SRC_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $SRC | $REM_NON_PRINT_CHAR | $NORMALIZE_ROMANIAN | $REMOVE_DIACRITICS | $TOKENIZER -l $SRC -no-escape -threads $N_THREADS"
-else
-  SRC_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $SRC | $REM_NON_PRINT_CHAR |                                            $TOKENIZER -l $SRC -no-escape -threads $N_THREADS"
-fi
-if [ "$TGT" == "ro" ]; then
-  TGT_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $TGT | $REM_NON_PRINT_CHAR | $NORMALIZE_ROMANIAN | $REMOVE_DIACRITICS | $TOKENIZER -l $TGT -no-escape -threads $N_THREADS"
-else
-  TGT_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $TGT | $REM_NON_PRINT_CHAR |                                            $TOKENIZER -l $TGT -no-escape -threads $N_THREADS"
-fi
+# # preprocessing commands - special case for Romanian
+# if [ "$SRC" == "ro" ]; then
+#   SRC_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $SRC | $REM_NON_PRINT_CHAR | $NORMALIZE_ROMANIAN | $REMOVE_DIACRITICS | $TOKENIZER -l $SRC -no-escape -threads $N_THREADS"
+# else
+#   SRC_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $SRC | $REM_NON_PRINT_CHAR |                                            $TOKENIZER -l $SRC -no-escape -threads $N_THREADS"
+# fi
+# if [ "$TGT" == "ro" ]; then
+#   TGT_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $TGT | $REM_NON_PRINT_CHAR | $NORMALIZE_ROMANIAN | $REMOVE_DIACRITICS | $TOKENIZER -l $TGT -no-escape -threads $N_THREADS"
+# else
+#   TGT_PREPROCESSING="$REPLACE_UNICODE_PUNCT | $NORM_PUNC -l $TGT | $REM_NON_PRINT_CHAR |                                            $TOKENIZER -l $TGT -no-escape -threads $N_THREADS"
+# fi
 
-# tokenize data
-if ! [[ -f "$SRC_TOK" ]]; then
-  echo "Tokenize $SRC monolingual data..."
-  eval "cat $SRC_RAW | $SRC_PREPROCESSING > $SRC_TOK"
-fi
+# # tokenize data
+# if ! [[ -f "$SRC_TOK" ]]; then
+#   echo "Tokenize $SRC monolingual data..."
+#   eval "cat $SRC_RAW | $SRC_PREPROCESSING > $SRC_TOK"
+# fi
 
-if ! [[ -f "$TGT_TOK" ]]; then
-  echo "Tokenize $TGT monolingual data..."
-  eval "cat $TGT_RAW | $TGT_PREPROCESSING > $TGT_TOK"
-fi
-echo "$SRC monolingual data tokenized in: $SRC_TOK"
-echo "$TGT monolingual data tokenized in: $TGT_TOK"
+# if ! [[ -f "$TGT_TOK" ]]; then
+#   echo "Tokenize $TGT monolingual data..."
+#   eval "cat $TGT_RAW | $TGT_PREPROCESSING > $TGT_TOK"
+# fi
+# echo "$SRC monolingual data tokenized in: $SRC_TOK"
+# echo "$TGT monolingual data tokenized in: $TGT_TOK"
 
-# reload BPE codes
-cd $MAIN_PATH
-if [ ! -f "$BPE_CODES" ] && [ -f "$RELOAD_CODES" ]; then
-  echo "Reloading BPE codes from $RELOAD_CODES ..."
-  cp $RELOAD_CODES $BPE_CODES
-fi
+# # reload BPE codes
+# cd $MAIN_PATH
+# if [ ! -f "$BPE_CODES" ] && [ -f "$RELOAD_CODES" ]; then
+#   echo "Reloading BPE codes from $RELOAD_CODES ..."
+#   cp $RELOAD_CODES $BPE_CODES
+# fi
 
-# learn BPE codes
-if [ ! -f "$BPE_CODES" ]; then
-  echo "Learning BPE codes..."
-  $FASTBPE learnbpe $CODES $SRC_TOK $TGT_TOK > $BPE_CODES
-fi
-echo "BPE learned in $BPE_CODES"
+# # learn BPE codes
+# if [ ! -f "$BPE_CODES" ]; then
+#   echo "Learning BPE codes..."
+#   $FASTBPE learnbpe $CODES $SRC_TOK $TGT_TOK > $BPE_CODES
+# fi
+# echo "BPE learned in $BPE_CODES"
 
-# apply BPE codes
-if ! [[ -f "$SRC_TRAIN_BPE" ]]; then
-  echo "Applying $SRC BPE codes..."
-  $FASTBPE applybpe $SRC_TRAIN_BPE $SRC_TOK $BPE_CODES
-fi
-if ! [[ -f "$TGT_TRAIN_BPE" ]]; then
-  echo "Applying $TGT BPE codes..."
-  $FASTBPE applybpe $TGT_TRAIN_BPE $TGT_TOK $BPE_CODES
-fi
-echo "BPE codes applied to $SRC in: $SRC_TRAIN_BPE"
-echo "BPE codes applied to $TGT in: $TGT_TRAIN_BPE"
+# # apply BPE codes
+# if ! [[ -f "$SRC_TRAIN_BPE" ]]; then
+#   echo "Applying $SRC BPE codes..."
+#   $FASTBPE applybpe $SRC_TRAIN_BPE $SRC_TOK $BPE_CODES
+# fi
+# if ! [[ -f "$TGT_TRAIN_BPE" ]]; then
+#   echo "Applying $TGT BPE codes..."
+#   $FASTBPE applybpe $TGT_TRAIN_BPE $TGT_TOK $BPE_CODES
+# fi
+# echo "BPE codes applied to $SRC in: $SRC_TRAIN_BPE"
+# echo "BPE codes applied to $TGT in: $TGT_TRAIN_BPE"
 
-# extract source and target vocabulary
-if ! [[ -f "$SRC_VOCAB" && -f "$TGT_VOCAB" ]]; then
-  echo "Extracting vocabulary..."
-  $FASTBPE getvocab $SRC_TRAIN_BPE > $SRC_VOCAB
-  $FASTBPE getvocab $TGT_TRAIN_BPE > $TGT_VOCAB
-fi
-echo "$SRC vocab in: $SRC_VOCAB"
-echo "$TGT vocab in: $TGT_VOCAB"
+# # extract source and target vocabulary
+# if ! [[ -f "$SRC_VOCAB" && -f "$TGT_VOCAB" ]]; then
+#   echo "Extracting vocabulary..."
+#   $FASTBPE getvocab $SRC_TRAIN_BPE > $SRC_VOCAB
+#   $FASTBPE getvocab $TGT_TRAIN_BPE > $TGT_VOCAB
+# fi
+# echo "$SRC vocab in: $SRC_VOCAB"
+# echo "$TGT vocab in: $TGT_VOCAB"
 
-# reload full vocabulary
-cd $MAIN_PATH
-if [ ! -f "$FULL_VOCAB" ] && [ -f "$RELOAD_VOCAB" ]; then
-  echo "Reloading vocabulary from $RELOAD_VOCAB ..."
-  cp $RELOAD_VOCAB $FULL_VOCAB
-fi
+# # reload full vocabulary
+# cd $MAIN_PATH
+# if [ ! -f "$FULL_VOCAB" ] && [ -f "$RELOAD_VOCAB" ]; then
+#   echo "Reloading vocabulary from $RELOAD_VOCAB ..."
+#   cp $RELOAD_VOCAB $FULL_VOCAB
+# fi
 
-# extract full vocabulary
-if ! [[ -f "$FULL_VOCAB" ]]; then
-  echo "Extracting vocabulary..."
-  $FASTBPE getvocab $SRC_TRAIN_BPE $TGT_TRAIN_BPE > $FULL_VOCAB
-fi
-echo "Full vocab in: $FULL_VOCAB"
+# # extract full vocabulary
+# if ! [[ -f "$FULL_VOCAB" ]]; then
+#   echo "Extracting vocabulary..."
+#   $FASTBPE getvocab $SRC_TRAIN_BPE $TGT_TRAIN_BPE > $FULL_VOCAB
+# fi
+# echo "Full vocab in: $FULL_VOCAB"
 
-# binarize data
-if ! [[ -f "$SRC_TRAIN_BPE.pth" ]]; then
-  echo "Binarizing $SRC data..."
-  $MAIN_PATH/preprocess.py $FULL_VOCAB $SRC_TRAIN_BPE
-fi
-if ! [[ -f "$TGT_TRAIN_BPE.pth" ]]; then
-  echo "Binarizing $TGT data..."
-  $MAIN_PATH/preprocess.py $FULL_VOCAB $TGT_TRAIN_BPE
-fi
-echo "$SRC binarized data in: $SRC_TRAIN_BPE.pth"
-echo "$TGT binarized data in: $TGT_TRAIN_BPE.pth"
-
-
-#
-# Download parallel data (for evaluation only)
-#
-
-cd $PARA_PATH
-
-echo "Downloading parallel data..."
-wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
-
-echo "Extracting parallel data..."
-tar -xzf dev.tgz
-
-# check valid and test files are here
-if ! [[ -f "$PARA_SRC_VALID.sgm" ]]; then echo "$PARA_SRC_VALID.sgm is not found!"; exit; fi
-if ! [[ -f "$PARA_TGT_VALID.sgm" ]]; then echo "$PARA_TGT_VALID.sgm is not found!"; exit; fi
-if ! [[ -f "$PARA_SRC_TEST.sgm" ]];  then echo "$PARA_SRC_TEST.sgm is not found!";  exit; fi
-if ! [[ -f "$PARA_TGT_TEST.sgm" ]];  then echo "$PARA_TGT_TEST.sgm is not found!";  exit; fi
-
-echo "Tokenizing valid and test data..."
-eval "$INPUT_FROM_SGM < $PARA_SRC_VALID.sgm | $SRC_PREPROCESSING > $PARA_SRC_VALID"
-eval "$INPUT_FROM_SGM < $PARA_TGT_VALID.sgm | $TGT_PREPROCESSING > $PARA_TGT_VALID"
-eval "$INPUT_FROM_SGM < $PARA_SRC_TEST.sgm  | $SRC_PREPROCESSING > $PARA_SRC_TEST"
-eval "$INPUT_FROM_SGM < $PARA_TGT_TEST.sgm  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
-
-echo "Applying BPE to valid and test files..."
-$FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
-$FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
-$FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
-$FASTBPE applybpe $PARA_TGT_TEST_BPE  $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
-
-echo "Binarizing data..."
-rm -f $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
-$MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_VALID_BPE
-$MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_VALID_BPE
-$MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_TEST_BPE
-$MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_TEST_BPE
+# # binarize data
+# if ! [[ -f "$SRC_TRAIN_BPE.pth" ]]; then
+#   echo "Binarizing $SRC data..."
+#   $MAIN_PATH/preprocess.py $FULL_VOCAB $SRC_TRAIN_BPE
+# fi
+# if ! [[ -f "$TGT_TRAIN_BPE.pth" ]]; then
+#   echo "Binarizing $TGT data..."
+#   $MAIN_PATH/preprocess.py $FULL_VOCAB $TGT_TRAIN_BPE
+# fi
+# echo "$SRC binarized data in: $SRC_TRAIN_BPE.pth"
+# echo "$TGT binarized data in: $TGT_TRAIN_BPE.pth"
 
 
-#
-# Link monolingual validation and test data to parallel data
-#
-ln -sf $PARA_SRC_VALID_BPE.pth $SRC_VALID_BPE.pth
-ln -sf $PARA_TGT_VALID_BPE.pth $TGT_VALID_BPE.pth
-ln -sf $PARA_SRC_TEST_BPE.pth  $SRC_TEST_BPE.pth
-ln -sf $PARA_TGT_TEST_BPE.pth  $TGT_TEST_BPE.pth
+# #
+# # Download parallel data (for evaluation only)
+# #
+
+# cd $PARA_PATH
+
+# echo "Downloading parallel data..."
+# wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
+
+# echo "Extracting parallel data..."
+# tar -xzf dev.tgz
+
+# # check valid and test files are here
+# if ! [[ -f "$PARA_SRC_VALID.sgm" ]]; then echo "$PARA_SRC_VALID.sgm is not found!"; exit; fi
+# if ! [[ -f "$PARA_TGT_VALID.sgm" ]]; then echo "$PARA_TGT_VALID.sgm is not found!"; exit; fi
+# if ! [[ -f "$PARA_SRC_TEST.sgm" ]];  then echo "$PARA_SRC_TEST.sgm is not found!";  exit; fi
+# if ! [[ -f "$PARA_TGT_TEST.sgm" ]];  then echo "$PARA_TGT_TEST.sgm is not found!";  exit; fi
+
+# echo "Tokenizing valid and test data..."
+# eval "$INPUT_FROM_SGM < $PARA_SRC_VALID.sgm | $SRC_PREPROCESSING > $PARA_SRC_VALID"
+# eval "$INPUT_FROM_SGM < $PARA_TGT_VALID.sgm | $TGT_PREPROCESSING > $PARA_TGT_VALID"
+# eval "$INPUT_FROM_SGM < $PARA_SRC_TEST.sgm  | $SRC_PREPROCESSING > $PARA_SRC_TEST"
+# eval "$INPUT_FROM_SGM < $PARA_TGT_TEST.sgm  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
+
+# echo "Applying BPE to valid and test files..."
+# $FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
+# $FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
+# $FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
+# $FASTBPE applybpe $PARA_TGT_TEST_BPE  $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
+
+# echo "Binarizing data..."
+# rm -f $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
+# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_VALID_BPE
+# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_VALID_BPE
+# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_TEST_BPE
+# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_TEST_BPE
+
+
+# #
+# # Link monolingual validation and test data to parallel data
+# #
+# ln -sf $PARA_SRC_VALID_BPE.pth $SRC_VALID_BPE.pth
+# ln -sf $PARA_TGT_VALID_BPE.pth $TGT_VALID_BPE.pth
+# ln -sf $PARA_SRC_TEST_BPE.pth  $SRC_TEST_BPE.pth
+# ln -sf $PARA_TGT_TEST_BPE.pth  $TGT_TEST_BPE.pth
 
 
 #
