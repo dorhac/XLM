@@ -11,7 +11,7 @@ set -e
 #
 # Data preprocessing configuration
 #
-N_MONO=5000000  # number of monolingual sentences for each language
+N_MONO=1591855  # number of monolingual sentences for each language
 CODES=60000     # number of BPE codes
 N_THREADS=16    # number of threads in data preprocessing
 
@@ -92,8 +92,8 @@ NORMALIZE_ROMANIAN=$WMT16_SCRIPTS/preprocess/normalise-romanian.py
 REMOVE_DIACRITICS=$WMT16_SCRIPTS/preprocess/remove-diacritics.py
 
 # raw and tokenized files
-SRC_RAW=$MONO_PATH/$SRC/all.$SRC
-TGT_RAW=$MONO_PATH/$TGT/all.$TGT
+SRC_RAW=$PWD/all.$SRC
+TGT_RAW=$PWD/all.$TGT
 SRC_TOK=$SRC_RAW.tok
 TGT_TOK=$TGT_RAW.tok
 
@@ -153,9 +153,9 @@ cd $MONO_PATH
 if [ "$SRC" == "de" -o "$TGT" == "de" ]; then
   echo "Downloading German monolingual data ..."
   mkdir -p $MONO_PATH/de
-  cd $MONO_PATH/de
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.de.shuffled.gz
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.de.shuffled.gz
+  #cd $MONO_PATH/de
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.de.shuffled.gz
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.de.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.de.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.de.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.de.shuffled.gz
@@ -170,9 +170,9 @@ fi
 if [ "$SRC" == "en" -o "$TGT" == "en" ]; then
   echo "Downloading English monolingual data ..."
   mkdir -p $MONO_PATH/en
-  cd $MONO_PATH/en
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.en.shuffled.gz
+  #cd $MONO_PATH/en
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.en.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.en.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.en.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.en.shuffled.gz
@@ -188,9 +188,9 @@ if [ "$SRC" == "fr" -o "$TGT" == "fr" ]; then
   echo "Downloading French monolingual data ..."
   mkdir -p $MONO_PATH/fr
   cd $MONO_PATH/fr
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.fr.shuffled.gz
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.fr.shuffled.gz
-  wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.fr.shuffled.gz
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.fr.shuffled.gz
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.fr.shuffled.gz
+  #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.fr.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2010.fr.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2011.fr.shuffled.gz
   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2012.fr.shuffled.gz
@@ -211,27 +211,27 @@ fi
 cd $MONO_PATH
 
 # decompress monolingual data
-for FILENAME in $SRC/news*gz $TGT/news*gz; do
-  OUTPUT="${FILENAME::-3}"
-  if [ ! -f "$OUTPUT" ]; then
-    echo "Decompressing $FILENAME..."
-    gunzip -k $FILENAME
-  else
-    echo "$OUTPUT already decompressed."
-  fi
-done
+#for FILENAME in $SRC/news*gz $TGT/news*gz; do
+ # OUTPUT="${FILENAME::-3}"
+ # if [ ! -f "$OUTPUT" ]; then
+ #   echo "Decompressing $FILENAME..."
+ #   gunzip -k $FILENAME
+ # else
+#    echo "$OUTPUT already decompressed."
+ # fi
+#done
 
 # concatenate monolingual data files
-if ! [[ -f "$SRC_RAW" ]]; then
-  echo "Concatenating $SRC monolingual data..."
-  cat $(ls $SRC/news*$SRC* | grep -v gz) | head -n $N_MONO > $SRC_RAW
-fi
-if ! [[ -f "$TGT_RAW" ]]; then
-  echo "Concatenating $TGT monolingual data..."
-  cat $(ls $TGT/news*$TGT* | grep -v gz) | head -n $N_MONO > $TGT_RAW
-fi
-echo "$SRC monolingual data concatenated in: $SRC_RAW"
-echo "$TGT monolingual data concatenated in: $TGT_RAW"
+#if ! [[ -f "$SRC_RAW" ]]; then
+ # echo "Concatenating $SRC monolingual data..."
+ # cat $(ls $SRC/news*$SRC* | grep -v gz) | head -n $N_MONO > $SRC_RAW
+#fi
+#if ! [[ -f "$TGT_RAW" ]]; then
+#  echo "Concatenating $TGT monolingual data..."
+#  cat $(ls $TGT/news*$TGT* | grep -v gz) | head -n $N_MONO > $TGT_RAW
+#fi
+#echo "$SRC monolingual data concatenated in: $SRC_RAW"
+#echo "$TGT monolingual data concatenated in: $TGT_RAW"
 
 # # check number of lines
 # if ! [[ "$(wc -l < $SRC_RAW)" -eq "$N_MONO" ]]; then echo "ERROR: Number of lines does not match! Be sure you have $N_MONO sentences in your $SRC monolingual data."; exit; fi
