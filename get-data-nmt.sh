@@ -224,7 +224,7 @@ fi
 #  # fi
 # #done
 
-concatenate monolingual data files
+#concatenate monolingual data files
 if ! [[ -f "$SRC_RAW" ]]; then
  echo "Concatenating $SRC monolingual data..."
  cat $(ls $SRC/*$SRC* | grep -v gz) | head -n $N_MONO > $SRC_RAW
