@@ -171,7 +171,7 @@ fi
    echo "Downloading English monolingual data ..."
    mkdir -p $MONO_PATH/en
    cd $MONO_PATH/en
-   mv MAIN_PATH/rock.en ./
+   mv $MAIN_PATH/rock.en $MONO_PATH/en
 #    #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.en.shuffled.gz
 #   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.en.shuffled.gz
@@ -189,7 +189,7 @@ fi
    echo "Downloading French monolingual data ..."
    mkdir -p $MONO_PATH/fr
    cd $MONO_PATH/fr
-   mv MAIN_PATH/hip.fr ./
+   mv $MAIN_PATH/hip.fr $MONO_PATH/fr
 
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.fr.shuffled.gz
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.fr.shuffled.gz
