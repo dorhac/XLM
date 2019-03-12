@@ -217,7 +217,7 @@ def main(params):
         print(params)
         ###
         for key, value in data.items():
-            print(key,value)
+            logger.info(key,value)
         ###
         model = build_model(params, data['dico'])
     else:
