@@ -11,7 +11,7 @@ set -e
 #
 # Data preprocessing configuration
 #
-N_MONO=1591855  # number of monolingual sentences for each language
+N_MONO=100  # number of monolingual sentences for each language
 CODES=60000     # number of BPE codes
 N_THREADS=16    # number of threads in data preprocessing
 
@@ -92,8 +92,8 @@ NORMALIZE_ROMANIAN=$WMT16_SCRIPTS/preprocess/normalise-romanian.py
 REMOVE_DIACRITICS=$WMT16_SCRIPTS/preprocess/remove-diacritics.py
 
 # raw and tokenized files
-SRC_RAW=$PWD/all.$SRC
-TGT_RAW=$PWD/all.$TGT
+SRC_RAW=$PWD/rock.$SRC
+TGT_RAW=$PWD/hip.$TGT
 SRC_TOK=$SRC_RAW.tok
 TGT_TOK=$TGT_RAW.tok
 
@@ -148,7 +148,7 @@ fi
 # Download monolingual data
 #
 
-# cd $MONO_PATH
+ cd $MONO_PATH
 
 # if [ "$SRC" == "de" -o "$TGT" == "de" ]; then
 #   echo "Downloading German monolingual data ..."
@@ -167,10 +167,10 @@ fi
 #   # wget -c http://data.statmt.org/wmt18/translation-task/news.2017.de.shuffled.deduped.gz
 # fi
 
-# if [ "$SRC" == "en" -o "$TGT" == "en" ]; then
-#   echo "Downloading English monolingual data ..."
-#   mkdir -p $MONO_PATH/en
-#   #cd $MONO_PATH/en
+ if [ "$SRC" == "en" -o "$TGT" == "en" ]; then
+   echo "Downloading English monolingual data ..."
+   mkdir -p $MONO_PATH/en
+   cd $MONO_PATH/en
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.en.shuffled.gz
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.en.shuffled.gz
 #   # wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.en.shuffled.gz
@@ -182,12 +182,12 @@ fi
 #   # wget -c http://data.statmt.org/wmt16/translation-task/news.2015.en.shuffled.gz
 #   # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.en.shuffled.gz
 #   # wget -c http://data.statmt.org/wmt18/translation-task/news.2017.en.shuffled.deduped.gz
-# fi
+ fi
 
-# if [ "$SRC" == "fr" -o "$TGT" == "fr" ]; then
-#   echo "Downloading French monolingual data ..."
-#   mkdir -p $MONO_PATH/fr
-#   cd $MONO_PATH/fr
+ if [ "$SRC" == "fr" -o "$TGT" == "fr" ]; then
+   echo "Downloading French monolingual data ..."
+   mkdir -p $MONO_PATH/fr
+   cd $MONO_PATH/fr
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2007.fr.shuffled.gz
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2008.fr.shuffled.gz
 #   #wget -c http://www.statmt.org/wmt14/training-monolingual-news-crawl/news.2009.fr.shuffled.gz
@@ -199,7 +199,7 @@ fi
 #   # wget -c http://data.statmt.org/wmt17/translation-task/news.2015.fr.shuffled.gz
 #   # wget -c http://data.statmt.org/wmt17/translation-task/news.2016.fr.shuffled.gz
 #   # wget -c http://data.statmt.org/wmt17/translation-task/news.2017.fr.shuffled.gz
-# fi
+ fi
 
 # if [ "$SRC" == "ro" -o "$TGT" == "ro" ]; then
 #   echo "Downloading Romanian monolingual data ..."
