@@ -91,21 +91,29 @@ def build_model(params, dico):
     """
     Build model.
     """
+    print(params)
+    print(dico)
     if params.encoder_only:
         # build
+        print('1')
         model = TransformerModel(params, dico, is_encoder=True, with_output=True)
-
+        print('2')
         # reload pretrained word embeddings
         if params.reload_emb != '':
             word2id, embeddings = load_embeddings(params.reload_emb, params)
             set_pretrain_emb(model, dico, word2id, embeddings)
-
+            print('3')
         # reload a pretrained model
         if params.reload_model != '':
+            print('4')
             logger.info("Reloading model from %s ..." % params.reload_model)
+            print('5')
             reloaded = torch.load(params.reload_model, map_location=lambda storage, loc: storage.cuda(params.local_rank))['model']
+            print('6')
             if all([k.startswith('module.') for k in reloaded.keys()]):
+                print('7')
                 reloaded = {k[len('module.'):]: v for k, v in reloaded.items()}
+                print('8')
 
             # # HACK to reload models with less layers
             # for i in range(12, 24):
@@ -114,8 +122,9 @@ def build_model(params, dico):
             #         if k in model.state_dict() and k not in reloaded:
             #             logger.warning("Parameter %s not found. Ignoring ..." % k)
             #             reloaded[k] = model.state_dict()[k]
-
+            print('9')
             model.load_state_dict(reloaded)
+            print('10')
 
         logger.debug("Model: {}".format(model))
         logger.info("Number of parameters (model): %i" % sum([p.numel() for p in model.parameters() if p.requires_grad]))
