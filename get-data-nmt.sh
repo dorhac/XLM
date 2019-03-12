@@ -337,47 +337,47 @@ echo "$TGT binarized data in: $TGT_TRAIN_BPE.pth"
 # # Download parallel data (for evaluation only)
 # #
 
-# cd $PARA_PATH
+ cd $PARA_PATH
 
-# echo "Downloading parallel data..."
-# wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
+ echo "Downloading parallel data..."
+ wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
 
-# echo "Extracting parallel data..."
-# tar -xzf dev.tgz
+ echo "Extracting parallel data..."
+ tar -xzf dev.tgz
 
-# # check valid and test files are here
-# if ! [[ -f "$PARA_SRC_VALID.sgm" ]]; then echo "$PARA_SRC_VALID.sgm is not found!"; exit; fi
-# if ! [[ -f "$PARA_TGT_VALID.sgm" ]]; then echo "$PARA_TGT_VALID.sgm is not found!"; exit; fi
-# if ! [[ -f "$PARA_SRC_TEST.sgm" ]];  then echo "$PARA_SRC_TEST.sgm is not found!";  exit; fi
-# if ! [[ -f "$PARA_TGT_TEST.sgm" ]];  then echo "$PARA_TGT_TEST.sgm is not found!";  exit; fi
+# check valid and test files are here
+ if ! [[ -f "$PARA_SRC_VALID.sgm" ]]; then echo "$PARA_SRC_VALID.sgm is not found!"; exit; fi
+ if ! [[ -f "$PARA_TGT_VALID.sgm" ]]; then echo "$PARA_TGT_VALID.sgm is not found!"; exit; fi
+ if ! [[ -f "$PARA_SRC_TEST.sgm" ]];  then echo "$PARA_SRC_TEST.sgm is not found!";  exit; fi
+ if ! [[ -f "$PARA_TGT_TEST.sgm" ]];  then echo "$PARA_TGT_TEST.sgm is not found!";  exit; fi
 
-# echo "Tokenizing valid and test data..."
-# eval "$INPUT_FROM_SGM < $PARA_SRC_VALID.sgm | $SRC_PREPROCESSING > $PARA_SRC_VALID"
-# eval "$INPUT_FROM_SGM < $PARA_TGT_VALID.sgm | $TGT_PREPROCESSING > $PARA_TGT_VALID"
-# eval "$INPUT_FROM_SGM < $PARA_SRC_TEST.sgm  | $SRC_PREPROCESSING > $PARA_SRC_TEST"
-# eval "$INPUT_FROM_SGM < $PARA_TGT_TEST.sgm  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
+ echo "Tokenizing valid and test data..."
+ eval "$INPUT_FROM_SGM < $PARA_SRC_VALID.sgm | $SRC_PREPROCESSING > $PARA_SRC_VALID"
+ eval "$INPUT_FROM_SGM < $PARA_TGT_VALID.sgm | $TGT_PREPROCESSING > $PARA_TGT_VALID"
+ eval "$INPUT_FROM_SGM < $PARA_SRC_TEST.sgm  | $SRC_PREPROCESSING > $PARA_SRC_TEST"
+ eval "$INPUT_FROM_SGM < $PARA_TGT_TEST.sgm  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
 
 # echo "Applying BPE to valid and test files..."
-# $FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
-# $FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
-# $FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
-# $FASTBPE applybpe $PARA_TGT_TEST_BPE  $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
+ $FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
+ $FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
+ $FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
+ $FASTBPE applybpe $PARA_TGT_TEST_BPE  $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
 
-# echo "Binarizing data..."
-# rm -f $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
-# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_VALID_BPE
-# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_VALID_BPE
-# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_TEST_BPE
-# $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_TEST_BPE
+ echo "Binarizing data..."
+ rm -f $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
+ $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_VALID_BPE
+ $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_VALID_BPE
+ $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_SRC_TEST_BPE
+ $MAIN_PATH/preprocess.py $FULL_VOCAB $PARA_TGT_TEST_BPE
 
 
 # #
 # # Link monolingual validation and test data to parallel data
 # #
-# ln -sf $PARA_SRC_VALID_BPE.pth $SRC_VALID_BPE.pth
-# ln -sf $PARA_TGT_VALID_BPE.pth $TGT_VALID_BPE.pth
-# ln -sf $PARA_SRC_TEST_BPE.pth  $SRC_TEST_BPE.pth
-# ln -sf $PARA_TGT_TEST_BPE.pth  $TGT_TEST_BPE.pth
+ ln -sf $PARA_SRC_VALID_BPE.pth $SRC_VALID_BPE.pth
+ ln -sf $PARA_TGT_VALID_BPE.pth $TGT_VALID_BPE.pth
+ ln -sf $PARA_SRC_TEST_BPE.pth  $SRC_TEST_BPE.pth
+ ln -sf $PARA_TGT_TEST_BPE.pth  $TGT_TEST_BPE.pth
 
 
 #
