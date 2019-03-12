@@ -214,6 +214,11 @@ def main(params):
 
     # build model
     if params.encoder_only:
+        print(params)
+        ###
+        for key, value in data.items():
+            print(key,value)
+        ###
         model = build_model(params, data['dico'])
     else:
         encoder, decoder = build_model(params, data['dico'])
