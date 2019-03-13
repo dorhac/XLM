@@ -269,7 +269,7 @@ def main(params):
 
     # language model training
     #for _ in range(params.max_epoch):
-    for _ in range(5):
+    for ep in range(5):
 
         logger.info("============ Starting epoch %i ... ============" % trainer.epoch)
 
@@ -315,7 +315,9 @@ def main(params):
             logger.info("__log__:%s" % json.dumps(scores))
 
         # end of epoch
-        trainer.save_best_model(scores)
+        model_name = 'blabla'+str(ep)
+        save_model(model_name)
+        #trainer.save_best_model(scores)
         trainer.save_periodic()
         trainer.end_epoch(scores)
 
