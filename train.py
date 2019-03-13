@@ -268,7 +268,8 @@ def main(params):
     set_sampling_probs(data, params)
 
     # language model training
-    for _ in range(params.max_epoch):
+    #for _ in range(params.max_epoch):
+    for _ in range(5):
 
         logger.info("============ Starting epoch %i ... ============" % trainer.epoch)
 
