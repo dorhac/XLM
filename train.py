@@ -316,7 +316,7 @@ def main(params):
 
         # end of epoch
         model_name = 'blabla'+str(ep)
-        save_model(model_name)
+        trainer.save_model(model_name)
         #trainer.save_best_model(scores)
         trainer.save_periodic()
         trainer.end_epoch(scores)
