@@ -120,10 +120,14 @@ PARA_TGT_TEST_BPE=$PROC_PATH/test.$SRC-$TGT.$TGT
 # valid / test file raw data
 unset PARA_SRC_VALID PARA_TGT_VALID PARA_SRC_TEST PARA_TGT_TEST
 if [ "$SRC" == "en" -a "$TGT" == "fr" ]; then
-  PARA_SRC_VALID=$PARA_PATH/dev/newstest2013-ref.en
-  PARA_TGT_VALID=$PARA_PATH/dev/newstest2013-ref.fr
-  PARA_SRC_TEST=$PARA_PATH/dev/newstest2014-fren-ref.en
-  PARA_TGT_TEST=$PARA_PATH/dev/newstest2014-fren-ref.fr
+#   PARA_SRC_VALID=$PARA_PATH/dev/newstest2013-ref.en
+#   PARA_TGT_VALID=$PARA_PATH/dev/newstest2013-ref.fr
+#   PARA_SRC_TEST=$PARA_PATH/dev/newstest2014-fren-ref.en
+#   PARA_TGT_TEST=$PARA_PATH/dev/newstest2014-fren-ref.fr
+  PARA_SRC_VALID=$SRC_RAW
+  PARA_TGT_VALID=$TGT_RAW
+  PARA_SRC_TEST=$SRC_RAW
+  PARA_TGT_TEST=$TGT_RAW
 fi
 if [ "$SRC" == "de" -a "$TGT" == "en" ]; then
   PARA_SRC_VALID=$PARA_PATH/dev/newstest2013-ref.de
