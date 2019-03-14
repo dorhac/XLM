@@ -358,11 +358,11 @@ echo "$TGT binarized data in: $TGT_TRAIN_BPE.pth"
  #if ! [[ -f "$PARA_SRC_TEST.sgm" ]];  then echo "$PARA_SRC_TEST.sgm is not found!";  exit; fi
  #if ! [[ -f "$PARA_TGT_TEST.sgm" ]];  then echo "$PARA_TGT_TEST.sgm is not found!";  exit; fi
 
- echo "Tokenizing valid and test data..."
- eval $MySRC_PATH | $SRC_PREPROCESSING > $PARA_SRC_VALID"
- eval $MyTGT_PATH | $TGT_PREPROCESSING > $PARA_TGT_VALID"
- eval $MySRC_PATH  | $SRC_PREPROCESSING > $PARA_SRC_TEST"
- eval $MyTGT_PATH  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
+ echo "Tokenizing valid and test data..." 
+ eval "cat $MySRC_PATH | $SRC_PREPROCESSING > $PARA_SRC_VALID"
+ eval "cat $MyTGT_PATH | $TGT_PREPROCESSING > $PARA_TGT_VALID"
+ eval "cat $MySRC_PATH  | $SRC_PREPROCESSING > $PARA_SRC_TEST"
+ eval "cat $MyTGT_PATH  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
 
 # echo "Applying BPE to valid and test files..."
  $FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
