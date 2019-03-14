@@ -66,9 +66,7 @@ DATA_PATH=$PWD/data
 MONO_PATH=$DATA_PATH/mono
 PARA_PATH=$DATA_PATH/para
 PROC_PATH=$DATA_PATH/processed/$SRC-$TGT
-#
-MySRC_PATH = $PWD/rockT.en
-MyTGT_PATH = $PWD/hipT.fr
+
 
 # create paths
 mkdir -p $TOOLS_PATH
@@ -99,6 +97,8 @@ SRC_RAW=$MONO_PATH/$SRC/all.$SRC
 TGT_RAW=$MONO_PATH/$TGT/all.$TGT
 SRC_TOK=$SRC_RAW.tok
 TGT_TOK=$TGT_RAW.tok
+MySRC_PATH=$PWD/rockT.$SRC
+MyTGT_PATH=$PWD/hipT.$TGT
 
 # BPE / vocab files
 BPE_CODES=$PROC_PATH/codes
