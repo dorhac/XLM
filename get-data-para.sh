@@ -11,7 +11,8 @@ pair=$1  # input language pair
 
 # data paths
 MAIN_PATH=$PWD
-PARA_PATH=$PWD/data/para
+#PARA_PATH=$PWD/data/para
+PARA_PATH = $PWD/data/processed
 PROCESSED_PATH=$PWD/data/processed/XLM15
 CODES_PATH=$MAIN_PATH/codes_xnli_15
 VOCAB_PATH=$MAIN_PATH/vocab_xnli_15
@@ -92,8 +93,8 @@ if [ $pair == "en-fr" ]; then
   # EU Bookshop
   # wget -c http://opus.nlpl.eu/download.php?f=EUbookshop%2Fen-fr.txt.zip -P $PARA_PATH
   # MultiUN
-  wget -c https://object.pouta.csc.fi/OPUS-MultiUN/v1/moses/en-fr.txt.zip -P $PARA_PATH
-  unzip -u $PARA_PATH/en-fr.txt.zip -d $PARA_PATH
+  #wget -c https://object.pouta.csc.fi/OPUS-MultiUN/v1/moses/en-fr.txt.zip -P $PARA_PATH
+  #unzip -u $PARA_PATH/en-fr.txt.zip -d $PARA_PATH
 fi
 
 # en-hi
