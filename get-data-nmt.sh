@@ -344,7 +344,7 @@ echo "$TGT binarized data in: $TGT_TRAIN_BPE.pth"
  cd $PARA_PATH
 
  echo "Downloading parallel data..."
- wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
+ #wget -c http://data.statmt.org/wmt18/translation-task/dev.tgz
 
  echo "Extracting parallel data..."
  #tar -xzf dev.tgz
@@ -362,10 +362,18 @@ echo "$TGT binarized data in: $TGT_TRAIN_BPE.pth"
  eval "$INPUT_FROM_SGM < $PARA_TGT_TEST  | $TGT_PREPROCESSING > $PARA_TGT_TEST"
 
 # echo "Applying BPE to valid and test files..."
- $FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
- $FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
- $FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
- $FASTBPE applybpe $PARA_TGT_TEST_BPE  $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
+ #$FASTBPE applybpe $PARA_SRC_VALID_BPE $PARA_SRC_VALID $BPE_CODES $SRC_VOCAB
+ #$FASTBPE applybpe $PARA_TGT_VALID_BPE $PARA_TGT_VALID $BPE_CODES $TGT_VOCAB
+ #$FASTBPE applybpe $PARA_SRC_TEST_BPE  $PARA_SRC_TEST  $BPE_CODES $SRC_VOCAB
+ #$FASTBPE applybpe $PARA_TGT_TEST_BPE  $PARA_TGT_TEST  $BPE_CODES $TGT_VOCAB
+ 
+ $FASTBPE applybpe $PARA_SRC_VALID_BPE $SRC_TOK $BPE_CODES $SRC_VOCAB
+ $FASTBPE applybpe $PARA_SRC_TEST_BPE $SRC_TOK $BPE_CODES $SRC_VOCAB
+ $FASTBPE applybpe $PARA_TGT_VALID_BPE $TGT_TOK $BPE_CODES $TGT_VOCAB
+ $FASTBPE applybpe $PARA_TGT_TEST_BPE  $TGT_TOK $BPE_CODES $TGT_VOCAB
+
+ 
+
 
  echo "Binarizing data..."
  rm -f $PARA_SRC_VALID_BPE.pth $PARA_TGT_VALID_BPE.pth $PARA_SRC_TEST_BPE.pth $PARA_TGT_TEST_BPE.pth
