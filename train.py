@@ -269,7 +269,7 @@ def main(params):
 
     # language model training
     #for _ in range(params.max_epoch):
-    for ep in range(20):
+    for ep in range(5):
 
         logger.info("============ Starting epoch %i ... ============" % trainer.epoch)
 
